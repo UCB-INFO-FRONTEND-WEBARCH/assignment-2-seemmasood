@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Roboto sitewide -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>My Task Manager</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <!-- Checkbox toggler -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-hidden="true" />
+
+    <!-- ================= HEADER ================= -->
+    <header class="main-header" role="banner">
+        <div class="header-left">
+            <!-- Label will become the hamburger scaffold -->
+            <label for="menu-toggle" class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Quick Find -->
+            <form class="quick-find" role="search" aria-label="Quick find">
+                <img src="assets/search_icon.png" alt="" class="icon" />
+                <input type="text" placeholder="Quick find" aria-label="Quick find">
+            </form>
+        </div>
+        <!-- Right-side counter with check icon -->
+        <div class="task-counter" aria-label="Tasks complete / today">
+            <span class="counter-check"></span>
+            <span>30/5</span>
+        </div>
+    </header>
+
+    <!-- APP LAYOUT (Flexbox) -->
+    <div class="app">
+        <!-- LEFT NAVIGATION- Sidebar (300px) -->
+        <aside class="sidebar" aria-label="Left navigation">
+            <nav>
+                <!-- UL structure with icons -->
+                <ul class="side-nav">
+                    <li>
+                        <a href="#" class="active">
+                            <img src="assets/inbox_icon.png" alt="" class="icon">
+                            <span class="label">
+                                <span class="item-text">Inbox</span>
+                                <span class="count">5</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/calendar_icon.png" alt="" class="icon">
+                            <span class="label">
+                                <span class="item-text">Today</span>
+                                <span class="count">5</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/upcoming_icon.png" alt="" class="icon">
+                            <span class="label">
+                                <span class="item-text">Upcoming</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <!-- Section header -->
+            <header class="content-header">
+                <h1>Inbox</h1>
+            </header>
+            <!-- Tasks as UL with circular "checkboxes" via CSS -->
+            <section aria-labelledby="inbox-list">
+                <ul id="inbox-list" class="task-list">
+                    <li>
+                        <label class="task">
+                            <input type="checkbox">
+                            <span class="custom-check" aria-hidden="true">
+                                <img src="assets/check_icon.png" alt="" />
+                            </span>
+                            <span class="task-text">Call Mom</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="task">
+                            <input type="checkbox">
+                            <span class="custom-check" aria-hidden="true">
+                                <img src="assets/check_icon.png" alt="" />
+                            </span>
+                            <span class="task-text">Buy the new issue of Scientific American</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="task">
+                            <input type="checkbox">
+                            <span class="custom-check" aria-hidden="true">
+                                <img src="assets/check_icon.png" alt="" />
+                            </span>
+                            <span class="task-text">Return the textbook to Josie</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="task">
+                            <input type="checkbox">
+                            <span class="custom-check" aria-hidden="true">
+                                <img src="assets/check_icon.png" alt="" />
+                            </span>
+                            <span class="task-text">Buy the new album by Rake</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="task">
+                            <input type="checkbox">
+                            <span class="custom-check" aria-hidden="true">
+                                <img src="assets/check_icon.png" alt="" />
+                            </span>
+                            <span class="task-text">Buy a gift card for Dad</span>
+                        </label>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
